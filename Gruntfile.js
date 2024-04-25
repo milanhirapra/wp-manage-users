@@ -183,8 +183,10 @@ module.exports = function(grunt) {
     // Text Domain.
     grunt.registerTask( 'dist', [ 'minify', 'checktextdomain', 'makepot' ] );
 
+    // Command for phpcs and phpcbf.
+    // Before executing these commands, run this command: composer update wp-coding-standards/wpcs --with-dependencies
     grunt.registerTask( 'phpcs', [ 'exec:path', 'exec:phpcs' ] );
-    grunt.registerTask( 'phpcbf', [ 'exec:phpcbf' ] );
+    grunt.registerTask( 'phpcbf', [ 'exec:path', 'exec:phpcbf' ] );
 
     // Default command.
     grunt.registerTask( 'default', [ 'dist' ] );
