@@ -1,3 +1,11 @@
+<?php
+/**
+ * The template for displaying user details.
+ *
+ * @package Milan\ManageUsers
+ * @since 1.0.0
+ */
+?>
 <script type="text/html" id="tmpl-wpmu-user-details">
 	<#
 	if ( 'undefined' !== typeof data.user.id ) {
