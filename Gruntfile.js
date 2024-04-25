@@ -14,16 +14,16 @@ module.exports = function(grunt) {
     // Project configuration.
     grunt.initConfig(
         {
-            pkg: grunt.file.readJSON('package.json'),
+            pkg: grunt.file.readJSON( 'package.json' ),
 
             jshint: {
                 options: grunt.file.readJSON( '.jshintrc' ),
                 grunt: {
-                    src: ['Gruntfile.js']
+                    src: [ 'Gruntfile.js' ]
                 },
                 core: {
                     expand: true,
-                    cwd: './',
+                    cwd: SOURCE_DIR,
                     src: [
                         '**/*.js',
                         '!**/*.min.js',
@@ -45,7 +45,7 @@ module.exports = function(grunt) {
                     expand: true,
                     ext: '.css',
                     flatten: true,
-                    src: ['assets/sass/*.scss'],
+                    src: [ 'assets/sass/*.scss' ],
                     dest: SOURCE_DIR + 'assets/css/'
                 },
             },
@@ -53,7 +53,7 @@ module.exports = function(grunt) {
             checktextdomain: {
                 options: {
                     correct_domain: false,
-                    text_domain: ['wp-manage-users'],
+                    text_domain: [ 'wp-manage-users' ],
                     keywords: [
                         '__:1,2d',
                         '_e:1,2d',
@@ -73,7 +73,11 @@ module.exports = function(grunt) {
                 },
                 files: {
                     cwd: SOURCE_DIR,
-                    src: ['**/*.php', '!**/vendor/**/*.php', '!**/node_modules/**/*.php'],
+                    src: [
+                        '**/*.php',
+                        '!**/vendor/**/*.php',
+                        '!**/node_modules/**/*.php'
+                    ],
                     expand: true
                 }
             },
@@ -143,7 +147,7 @@ module.exports = function(grunt) {
                         {
                             expand: true,
                             cwd: 'assets/css/',
-                            src: ['*.css', '!*.min.css'],
+                            src: [ '*.css', '!*.min.css' ],
                             dest: 'assets/css/',
                             ext: '.min.css'
                         }
