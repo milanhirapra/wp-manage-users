@@ -97,12 +97,12 @@ window.wp = window.wp || {};
             // Send ajax request to fetch the data.
             $.ajax(
                 {
-                    url: wpmu_object.admin_url,
+                    url: ManageUsers.admin_url,
                     type: 'POST',
                     data: {
                         action: 'wpmu_user_details',
                         id: user_id,
-                        __nonce: wpmu_object.user.nonce
+                        __nonce: ManageUsers.user.nonce
                     },
                     success: function( response ) {
 
@@ -126,7 +126,7 @@ window.wp = window.wp || {};
                     error: function() {
 
                         // Handle an error message.
-                        data.message = wpmu_object.user.error;
+                        data.message = ManageUsers.user.error;
 
                         // Load data to modal.
                         setTimeout(
@@ -142,7 +142,7 @@ window.wp = window.wp || {};
 
         }
 
-    }
+    };
 
     // Launch ManageUsers.
     window.ManageUsers.start();

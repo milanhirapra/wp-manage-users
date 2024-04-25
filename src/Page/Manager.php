@@ -95,7 +95,7 @@ class Manager {
 		// Localize the variable to use in JS files.
 		wp_localize_script(
 			'wp-manage-users-js',
-			'wpmu_object',
+			'ManageUsers',
 			apply_filters(
 				'wp_manage_users_localize_data',
 				array(
