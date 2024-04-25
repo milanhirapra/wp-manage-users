@@ -1,4 +1,4 @@
-/* global wp */
+/* global wp, ManageUsersVar */
 
 window.wp = window.wp || {};
 
@@ -97,12 +97,12 @@ window.wp = window.wp || {};
             // Send ajax request to fetch the data.
             $.ajax(
                 {
-                    url: ManageUsers.admin_url,
+                    url: ManageUsersVar.admin_url,
                     type: 'POST',
                     data: {
                         action: 'wpmu_user_details',
                         id: user_id,
-                        __nonce: ManageUsers.user.nonce
+                        __nonce: ManageUsersVar.user.nonce
                     },
                     success: function( response ) {
 
@@ -126,7 +126,7 @@ window.wp = window.wp || {};
                     error: function() {
 
                         // Handle an error message.
-                        data.message = ManageUsers.user.error;
+                        data.message = ManageUsersVar.user.error;
 
                         // Load data to modal.
                         setTimeout(
