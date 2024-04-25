@@ -1,0 +1,30 @@
+{
+  "name": "wp-manage-users",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Gruntfile.js",
+  "devDependencies": {
+    "grunt": "^1.4.1",
+    "grunt-checktextdomain": "~1.0.1",
+    "grunt-contrib-cssmin": "^4.0.0",
+    "grunt-contrib-jshint": "~3.1.1",
+    "grunt-contrib-uglify": "~5.0.1",
+    "grunt-sass": "~3.1.0",
+    "grunt-wp-i18n": "^1.0.3",
+    "node-sass": "^7.0.0",
+    "matchdep": "^2.0.0"
+  },
+  "engines": {
+    "node": ">=14.15.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/milanhirapra/wp-manage-users/issues"
+  },
+  "homepage": "https://github.com/milanhirapra/wp-manage-users#readme"
+}
