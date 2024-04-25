@@ -153,7 +153,24 @@ module.exports = function(grunt) {
                         }
                     ]
                 }
-            }
+            },
+
+            exec: {
+                path: {
+                    command: 'phpcs --config-set installed_paths vendor/wp-coding-standards/wpcs',
+                    cwd: SOURCE_DIR,
+                },
+                phpcs: {
+                    command: './vendor/bin/phpcs --ignore="vendor/*,node_modules/*" --extensions=php --standard=WordPress .',
+                    cwd: SOURCE_DIR,
+                    stdout: true
+                },
+                phpcbf: {
+                    command: 'phpcbf --ignore="vendor/*,node_modules/*" --extensions=php --standard=WordPress .',
+                    cwd: SOURCE_DIR,
+                    stdout: false
+                }
+            },
         }
     );
 
@@ -165,6 +182,9 @@ module.exports = function(grunt) {
 
     // Text Domain.
     grunt.registerTask( 'dist', [ 'minify', 'checktextdomain', 'makepot' ] );
+
+    grunt.registerTask( 'phpcs', [ 'exec:path', 'exec:phpcs' ] );
+    grunt.registerTask( 'phpcbf', [ 'exec:phpcbf' ] );
 
     // Default command.
     grunt.registerTask( 'default', [ 'dist' ] );
