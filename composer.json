@@ -1,6 +1,6 @@
 {
   "name": "milanhirapra/wp-manage-users",
-  "description": "Manage users with custom endpoints.",
+  "description": "View the list of users in HTML table by visiting the custom endpoints.",
   "keywords": [
     "wordpress",
     "users",
