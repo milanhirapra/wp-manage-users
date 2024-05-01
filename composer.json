@@ -25,6 +25,7 @@
   },
   "require-dev": {
     "phpunit/phpunit": "5.7.*",
+    "brain/monkey": "^2",
     "wp-coding-standards/wpcs": "^2",
     "phpcompatibility/phpcompatibility-wp": "^2",
     "dg/composer-cleaner": "^2",
@@ -37,6 +38,7 @@
   },
   "autoload-dev": {
     "psr-4": {
+      "Milan\\ManageUsers\\Tests\\": "tests/UnitTests/",
       "Milan\\ManageUsers\\": "src/"
     }
   },
