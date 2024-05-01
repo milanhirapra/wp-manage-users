@@ -55,30 +55,6 @@ class UserApi extends AbstractApis {
 	 */
 	public function get_user_list() {
 
-		$list = get_transient( 'wpmu_user_list' );
-		if ( $list !== false ) {
-			// Set cached data to the variable.
-			$this->user_list = $list;
-		} else {
-			// Set endpoints to get the user list.
-			$this->endpoint = '/users';
-
-			// Send the HTTP request.
-			$this->send();
-
-			// Assign the latest data to the variable.
-			$this->user_list = $this->get_data();
-
-			// Cached the date when no error found.
-			if ( empty( $this->get_error() ) ) {
-
-				// Cached the latest data.
-				set_transient( 'wpmu_user_list', $this->user_list );
-			}
-		}
-
-		/*
-
 		// Attempt to retrieve the cached data from the object cache
 		$cached_data = wp_cache_get( 'wpmu_users', $this->cache_group );
 
@@ -107,8 +83,6 @@ class UserApi extends AbstractApis {
 
 		}
 
-		*/
-
 	}
 
 	/**
@@ -119,30 +93,6 @@ class UserApi extends AbstractApis {
 	 * @return void
 	 */
 	public function get_user_details( $id = 0 ) {
-
-		$details = get_transient( 'wpmu_user_details_' . $id );
-		if ( $details !== false ) {
-			// Set cached data to the variable.
-			$this->user_details = $details;
-		} else {
-			// Set endpoints to get the user list.
-			$this->endpoint = '/users/' . $id;
-
-			// Send the HTTP request.
-			$this->send();
-
-			// Assign the latest data to the variable.
-			$this->user_details = $this->get_data();
-
-			// Cached the date when no error found.
-			if ( empty( $this->get_error() ) ) {
-
-				// Cached the latest data.
-				set_transient( 'wpmu_user_details_' . $id, $this->user_details );
-			}
-		}
-
-		/*
 
 		// Attempt to retrieve the cached data from the object cache
 		$cached_data = wp_cache_get( $id, $this->cache_group );
@@ -172,7 +122,6 @@ class UserApi extends AbstractApis {
 
 		}
 
-		*/
 	}
 
 	/**
